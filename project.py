@@ -124,7 +124,7 @@ def LambdaCalculator():
             #excpetion handler and adding        
             def executeAddition(x, y):
                 try:
-                    z = lambda x, y: int(x) + int(y)
+                    z = lambda x, y: float(x) + float(y)
                     # you need to execute the lambda, like this:
                     return z(x, y)
                 except:
@@ -137,7 +137,7 @@ def LambdaCalculator():
             #excpetion handler and multiplying        
             def executeMultip(x, y):
                 try:
-                    z = lambda x, y: int(x) * int(y)
+                    z = lambda x, y: float(x) * float(y)
                     # you need to execute the lambda, like this:
                     return z(x, y)
                 except:
