@@ -121,11 +121,17 @@ def LambdaCalculator():
             print("to exit type 'q'")
             dzialanie=(input('\n which operation you want to choose? '))
            
-           
+#           excpetion handler and adding        
+            def executeAddition(x, y):
+                try:
+                    z = lambda x, y: int(x) + int(y)
+                    # you need to execute the lambda, like this:
+                    return z(x, y)
+                except:
+                    print('Exception caught')
+
             if str(dzialanie)=='+':
-                adding = lambda x,y : x + y
-                print("result is: "  + str(adding(int(input("input 1st number: ")), int(input("input 2nd number: ")))))
-   
+                print("result is: "  + str(executeAddition(input("input 1st number: "), input("input 2nd number: "))))
    
             if str(dzialanie)=='*':
                 multip = lambda x,y : x * y
