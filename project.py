@@ -121,25 +121,58 @@ def LambdaCalculator():
             print("to exit type 'q'")
             dzialanie=(input('\n which operation you want to choose? '))
            
-           
+            #excpetion handler and adding        
+            def executeAddition(x, y):
+                try:
+                    z = lambda x, y: int(x) + int(y)
+                    # you need to execute the lambda, like this:
+                    return z(x, y)
+                except:
+                    print('Exception caught')
+       
             if str(dzialanie)=='+':
-                adding = lambda x,y : x + y
-                print("result is: "  + str(adding(int(input("input 1st number: ")), int(input("input 2nd number: ")))))
+                print("result is: "  + str(executeAddition(input("input 1st number: "), input("input 2nd number: "))))
    
-   
+            
+            #excpetion handler and multiplying        
+            def executeMultip(x, y):
+                try:
+                    z = lambda x, y: int(x) * int(y)
+                    # you need to execute the lambda, like this:
+                    return z(x, y)
+                except:
+                    print('Exception caught')
+
             if str(dzialanie)=='*':
                 multip = lambda x,y : x * y
-                print("result is: "  + str(multip(int(input("input 1st number: ")), int(input("input 2nd number: ")))))
+                print("result is: "  + str(executeMultip(input("input 1st number: ")), int(input("input 2nd number: "))))
        
-   
+            #excpetion handler and subtracting        
+            def executeSubtract(x, y):
+                try:
+                    z = lambda x, y: float(x) - float(y)
+                    # you need to execute the lambda, like this:
+                    return z(x, y)
+                except:
+                    print('Exception caught')
+                
             if str(dzialanie)=='-':
                 subtract = lambda x,y : x - y
-                print("result is: "  + str(subtract(int(input("input 1st number: ")), int(input("input 2nd number: ")))))
-   
-   
+                print("result is: "  + str(executeSubtract(input("input 1st number: ") , input("input 2nd number: "))))
+  
+                
+            #excpetion handler and dividing        
+            def executeDiv(x, y):
+                try:
+                    z = lambda x, y: float(x) / float(y)
+                    # you need to execute the lambda, like this:
+                    return z(x, y)
+                except:
+                    print('Exception caught')
+
             if str(dzialanie)=='/':
-                division = lambda x,y : x / y
-                print("result is: "  + str(division(int(input("input number to be divided: ")), int(input("input divisor: ")))))
+                print("result is: "  + str(executeDiv(input("input 1st number: "), input("input 2nd number: "))))
+
    
                    
    
