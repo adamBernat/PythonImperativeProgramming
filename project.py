@@ -8,6 +8,7 @@ def help1():
     print(" 3. Lambda Function Calculator (type '3')")
     print(" 4. Collatz Conjecture Simulation (type '4')")
     print(" 5. Gapful number checker (type '5')")
+    print(" 6. Summations calculator (type '6')")
     print(" y. To end program type 'q'")
     print(" z. To acces help type 'h'")
  
@@ -256,8 +257,31 @@ def Gapful():
             if number % divisor !=0:
                 print("your number is not gapful")
                 collected = False
- 
- 
+
+#summations calc with desc of challenge
+"""
+Summations Calculator
+Create a program that takes 3 inputs, a lower bound, an upper bound and the expression. Calculate the sum of that range based on the given expression and output the result.
+For Example:
+Input: 2 4 *2
+Output: 18 (2*2 + 3*2 + 4*2)
+"""
+def summations():
+    def summCalc (lower, higher, expression):
+        calcLine = "" # storage of final expression
+
+        for num in range (int(lower),int(higher)):
+            calcLine += "{}{} + ".format(str(num), expression)
+
+        calcLine += "{}{} ".format(higher, expression)
+
+        print(eval(calcLine),"({})".format(calcLine)) # evaluate the resulting line
+
+    summCalc(*input("please input string like '2 6 *3' \nWhere first digit is lower bound\nSecond digit is upper bound\nThird string is calculation type.\nRemember to split up variables with one space\nInput: ").split(" "))
+    print("Subprogram finished returning to program menu")
+
+
+
 #program
 Quit=""
 help1()
@@ -283,6 +307,10 @@ while Quit != True:
     if MainMenu=="5":
         Gapful()
         MainMenu=""
+
+    if MainMenu=="6":
+        summations()
+        MainMenu=""
        
     if MainMenu=="q":
         Quit=True
@@ -290,5 +318,5 @@ while Quit != True:
     if MainMenu=="h":
         help1()
        
-    elif MainMenu != "":
+    elif (MainMenu != "q" and MainMenu != ""):
         print("error")

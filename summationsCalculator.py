@@ -15,8 +15,8 @@ def summCalc (lower, higher, expression):
     for num in range (int(lower),int(higher)):
         calcLine += "{}{} + ".format(str(num), expression)
 
-    calcLine += "{}{} + ".format(higher, expression)
+    calcLine += "{}{} ".format(higher, expression)
 
     print(eval(calcLine),"({})".format(calcLine)) # evaluate the resulting line
 
-summCalc(*input().split(" "))
+summCalc(*input("please input string like '4 2 *3'").split(" "))
