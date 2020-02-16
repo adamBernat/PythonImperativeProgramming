@@ -7,6 +7,7 @@ divisor = "0."
 for i in range (len(x)-2):
 	divisor = divisor + "0"
 divisor = divisor + "1"
+print(str(divisor))
 
 
 # OLD creating addition step for calculation of root OLD!!!!
@@ -18,7 +19,7 @@ divisor = divisor + "1"
 
 #creating addition step for calculation of root
 if len(x) <= 3:
-	divisor2 = "0.000000001"
+	divisor2 = "0.0000001"
 	
 if (len(x) <= 5) and (len(x) > 3):
 	divisor2 = "0.000001"
@@ -49,4 +50,4 @@ while  seeked3 < x:
 
 print("calculated cube root is: " + str(seeked))
 print("cube root to ^3 is: " + str(seeked3))
-print("math pow result is" + str(math.pow(x,1/3)))
+print("math pow result is: " + str(math.pow(x,1/3)))
