@@ -1,3 +1,5 @@
+import math
+
 x = input('input number to be cube root found: ')
 
 #creating divisor for cube root base seek
@@ -47,3 +49,4 @@ while  seeked3 < x:
 
 print("calculated cube root is: " + str(seeked))
 print("cube root to ^3 is: " + str(seeked3))
+print("math pow result is" + str(math.pow(x,1/3)))
